@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BugTrack – All Bugs</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <span class="bug-icon">🐛</span>
+    <span>Bug<em>Track</em></span>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Main</div>
+    <a href="dashboard.html" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+    <a href="bugs.html" class="nav-item active"><span class="icon">🐞</span> Bugs <span class="nav-badge">12</span></a>
+    <a href="report.html" class="nav-item"><span class="icon">➕</span> Report Bug</a>
+    <a href="users.html" class="nav-item"><span class="icon">👥</span> Users</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">System</div>
+    <a href="#" class="nav-item"><span class="icon">🔔</span> Notifications <span class="nav-badge">3</span></a>
+    <a href="#" class="nav-item"><span class="icon">⚙️</span> Settings</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <div class="user-avatar">A</div>
+      <div><div class="user-name">Asha D</div><div class="user-role">Admin</div></div>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title">All Bugs</div>
+    <div class="topbar-actions">
+      <div class="search-bar">
+        <span>🔍</span>
+        <input type="text" placeholder="Search bugs..." oninput="filterBugs(this.value)"/>
+      </div>
+      <select class="btn btn-outline" onchange="filterBySeverity(this.value)" style="font-size:13px;">
+        <option value="">All Severity</option>
+        <option value="Critical">Critical</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <button class="btn btn-primary" onclick="window.location.href='report.html'">+ Report Bug</button>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Bug List <span style="color:var(--muted);font-weight:400;font-size:13px;">— 8 bugs found</span></h3>
+      </div>
+      <table id="bugs-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Title</th><th>Severity</th>
+            <th>Status</th><th>Assigned To</th><th>Reported By</th><th>Date</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--muted)">#001</td>
+            <td>Login page crash on wrong password</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td><span class="status status-open">Open</span></td>
+            <td>Ravi K</td><td>Asha D</td>
+            <td style="color:var(--muted)">28 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+          <tr>
+            <td style="color:var(--muted)">#002</td>
+            <td>Dashboard not loading on Safari</td>
+            <td><span class="badge badge-high">High</span></td>
+            <td><span class="status status-progress">In Progress</span></td>
+            <td>Priya S</td><td>Karan M</td>
+            <td style="color:var(--muted)">27 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+          <tr>
+            <td style="color:var(--muted)">#003</td>
+            <td>Bug form submit returns 500 error</td>
+            <td><span class="badge badge-high">High</span></td>
+            <td><span class="status status-progress">In Progress</span></td>
+            <td>Asha D</td><td>Priya S</td>
+            <td style="color:var(--muted)">26 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+          <tr>
+            <td style="color:var(--muted)">#004</td>
+            <td>Notification email not sending</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+            <td><span class="status status-resolved">Resolved</span></td>
+            <td>Karan M</td><td>Ravi K</td>
+            <td style="color:var(--muted)">25 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+          <tr>
+            <td style="color:var(--muted)">#005</td>
+            <td>Typo in user profile page</td>
+            <td><span class="badge badge-low">Low</span></td>
+            <td><span class="status status-closed">Closed</span></td>
+            <td>Priya S</td><td>Asha D</td>
+            <td style="color:var(--muted)">24 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+          <tr>
+            <td style="color:var(--muted)">#006</td>
+            <td>User cannot reset password</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td><span class="status status-open">Open</span></td>
+            <td>Ravi K</td><td>Karan M</td>
+            <td style="color:var(--muted)">23 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+          <tr>
+            <td style="color:var(--muted)">#007</td>
+            <td>Search bar returns empty results</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+            <td><span class="status status-progress">In Progress</span></td>
+            <td>Asha D</td><td>Priya S</td>
+            <td style="color:var(--muted)">22 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+          <tr>
+            <td style="color:var(--muted)">#008</td>
+            <td>Mobile layout broken on small screens</td>
+            <td><span class="badge badge-low">Low</span></td>
+            <td><span class="status status-open">Open</span></td>
+            <td>Karan M</td><td>Ravi K</td>
+            <td style="color:var(--muted)">21 Jun 2026</td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  function filterBugs(val) {
+    const rows = document.querySelectorAll('#bugs-table tbody tr');
+    rows.forEach(row => {
+      row.style.display = row.innerText.toLowerCase().includes(val.toLowerCase()) ? '' : 'none';
+    });
+  }
+  function filterBySeverity(val) {
+    const rows = document.querySelectorAll('#bugs-table tbody tr');
+    rows.forEach(row => {
+      row.style.display = (!val || row.innerText.includes(val)) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

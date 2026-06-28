@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BugTrack – Users</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <span class="bug-icon">🐛</span>
+    <span>Bug<em>Track</em></span>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Main</div>
+    <a href="dashboard.html" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+    <a href="bugs.html" class="nav-item"><span class="icon">🐞</span> Bugs <span class="nav-badge">12</span></a>
+    <a href="report.html" class="nav-item"><span class="icon">➕</span> Report Bug</a>
+    <a href="users.html" class="nav-item active"><span class="icon">👥</span> Users</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">System</div>
+    <a href="#" class="nav-item"><span class="icon">🔔</span> Notifications <span class="nav-badge">3</span></a>
+    <a href="#" class="nav-item"><span class="icon">⚙️</span> Settings</a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <div class="user-avatar">A</div>
+      <div><div class="user-name">Asha D</div><div class="user-role">Admin</div></div>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title">Team Members</div>
+    <div class="topbar-actions">
+      <button class="btn btn-primary">+ Add User</button>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:28px;">
+      <div class="stat-card">
+        <div class="stat-label">Total Users</div>
+        <div class="stat-value">4</div>
+        <div class="stat-sub">Active team members</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Developers</div>
+        <div class="stat-value stat-accent">2</div>
+        <div class="stat-sub">Working on bugs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Testers</div>
+        <div class="stat-value" style="color:var(--warning)">1</div>
+        <div class="stat-sub">Reporting bugs</div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header"><h3>All Users</h3></div>
+      <table>
+        <thead>
+          <tr><th>User</th><th>Email</th><th>Role</th><th>Bugs Assigned</th><th>Bugs Resolved</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div class="user-avatar" style="width:34px;height:34px;font-size:13px;">A</div>
+                <div>
+                  <div style="font-weight:600;">Asha D</div>
+                  <div style="font-size:11px;color:var(--muted);">Team Lead</div>
+                </div>
+              </div>
+            </td>
+            <td style="color:var(--muted)">amutharani306745@gmail.com</td>
+            <td><span class="badge" style="background:rgba(99,102,241,0.15);color:var(--accent2);">Admin</span></td>
+            <td>8</td><td>6</td>
+            <td><span class="status status-resolved">Active</span></td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Edit</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div class="user-avatar" style="width:34px;height:34px;font-size:13px;background:#f97316;">R</div>
+                <div>
+                  <div style="font-weight:600;">Ravi K</div>
+                  <div style="font-size:11px;color:var(--muted);">Backend Dev</div>
+                </div>
+              </div>
+            </td>
+            <td style="color:var(--muted)">ravi.k@example.com</td>
+            <td><span class="badge" style="background:rgba(59,130,246,0.15);color:var(--info);">Developer</span></td>
+            <td>12</td><td>9</td>
+            <td><span class="status status-resolved">Active</span></td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Edit</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div class="user-avatar" style="width:34px;height:34px;font-size:13px;background:#22c55e;">P</div>
+                <div>
+                  <div style="font-weight:600;">Priya S</div>
+                  <div style="font-size:11px;color:var(--muted);">Frontend Dev</div>
+                </div>
+              </div>
+            </td>
+            <td style="color:var(--muted)">priya.s@example.com</td>
+            <td><span class="badge" style="background:rgba(59,130,246,0.15);color:var(--info);">Developer</span></td>
+            <td>10</td><td>8</td>
+            <td><span class="status status-resolved">Active</span></td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Edit</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div class="user-avatar" style="width:34px;height:34px;font-size:13px;background:#eab308;">K</div>
+                <div>
+                  <div style="font-weight:600;">Karan M</div>
+                  <div style="font-size:11px;color:var(--muted);">QA Tester</div>
+                </div>
+              </div>
+            </td>
+            <td style="color:var(--muted)">karan.m@example.com</td>
+            <td><span class="badge" style="background:rgba(234,179,8,0.15);color:var(--medium);">Tester</span></td>
+            <td>5</td><td>3</td>
+            <td><span class="status status-progress">Away</span></td>
+            <td><button class="btn btn-outline" style="font-size:11px;padding:4px 10px;">Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
